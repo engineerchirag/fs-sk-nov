@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login Form</h1>
+    <form action="/signin" method="POST">
+        <div>
+            <!-- Username -->
+            <label for="name">Username</label>
+            <input placeholder="Enter username" id="name" name="username"/>
+        </div>
+        <div>
+            <!-- Password -->
+            <label for="password">Password</label>
+            <input placeholder="Enter password" type="password" id="password" name="password"/>
+        </div>
+        <div>
+            <input type="checkbox" id="rememberme" name="remember" /> <label for="rememberme">Remember me</label>
+        </div>
+        <div>
+            <!-- Button -->
+            <button>Submit</button>
+        </div>
+    </form>
+
+    <!-- http://127.0.0.1:5500/Class2/login.html?username=Chirag&password=123445&remember=on -->
+    
+</body>
+</html>

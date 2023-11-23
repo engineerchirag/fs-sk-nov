@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Registration</h1>
+    <form>
+      <div>
+        <!-- Name -->
+        <label>Name</label>
+        <input placeholder="Enter Name" type="text" />
+      </div>
+      <div>
+        <!-- Email -->
+        <label>Email</label>
+        <input placeholder="Enter Email" type="email" />
+      </div>
+      <div>
+        <!-- Age -->
+        <label>Age</label>
+        <input
+          placeholder="Enter Age"
+          type="number"
+          width="100px"
+          min="18"
+          max="60"
+        />
+      </div>
+      <div>
+        <!-- Gender -->
+        <label>Gender</label>
+        <div>
+          <label for="male">Male</label>
+          <input type="radio" value="Male" name="gender" id="male" />
+          <label for="female">Female</label>
+          <input type="radio" value="Female" name="gender" id="female" />
+          <label for="other">Other</label>
+          <input type="radio" value="Other" name="gender" id="other" />
+        </div>
+      </div>
+      <div>
+        <!-- DOB -->
+        <label>DOB</label>
+        <input
+          placeholder="Enter DOB"
+          type="date"
+          min="2023-11-10"
+          max="2023-12-06"
+        />
+      </div>
+      <div>
+        <!-- Phone -->
+        <label>Phone</label>
+        <input placeholder="Enter phone" type="number" />
+      </div>
+      <div>
+        <!-- Address -->
+        <label>Address</label>
+        <textarea placeholder="Enter full address"></textarea>
+      </div>
+      <div>
+        <!-- Degree -->
+        <label>Degree</label>
+        <select>
+          <option>BTech</option>
+          <option>BCA</option>
+          <option>BA</option>
+          <option>BCom</option>
+          <option>Bsc</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div>
+        <!-- Password -->
+        <label>Password</label>
+        <input placeholder="Enter password" type="password" />
+      </div>
+      <div>
+        <!-- Photo -->
+        <label>Photo</label>
+        <input placeholder="Upload photo" type="file" />
+      </div>
+      <div>
+        <!-- Button -->
+        <button>Register</button>
+      </div>
+    </form>
+  </body>
+</html>
