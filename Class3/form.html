@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form > div {
+            height: 30px;
+        }
+        label {
+            width: 100px;
+            display: inline-block;
+        }
+
+        input.field {
+            height: 20px;
+        }
+
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .redColor {
+            color: red;
+        }
+
+
+        label.bold.redColor {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login Form</h1>
+    <form action="/signin" method="POST">
+        <div>
+            <!-- Username -->
+            <label class="bold" for="name">Username</label>
+            <input class="field" value="Chirag123" placeholder="Enter username" id="name" name="username"/>
+        </div>
+        <div>
+            <!-- Password -->
+            <label class="bold" for="password">Password</label>
+            <input class="field" placeholder="Enter password" type="password" id="password" name="password"/>
+        </div>
+        <div>
+            <input type="checkbox" id="rememberme" name="remember" /> <label class="bold redColor" for="rememberme">Remember me</label>
+        </div>
+        <div>
+            <!-- Button -->
+            <button class="field">Submit</button>
+        </div>
+    </form>
+
+    <!-- http://127.0.0.1:5500/Class2/login.html?username=Chirag&password=123445&remember=on -->
+    
+</body>
+</html>
