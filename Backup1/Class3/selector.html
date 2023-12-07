@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        .male {
+            color: brown;
+        }
+        .female {
+            color: pink;
+        }
+    </style> -->
+
+    <!-- <style>
+        .delhi .female{
+            color: red;
+        }
+        .gujarat .male {
+            color: blue;
+        }
+    </style> -->
+
+    <style>
+        .karnataka > .female {
+            color: pink;
+        }
+        .gujarat > li:first-child {
+            color: pink;
+        }
+
+        .gujarat > li:nth-child(3) {
+            color: blue;
+        }
+
+        .delhi > li:nth-child(even) {
+            color: green;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Karnataka</h1>
+    <ul class="karnataka">
+        <li class="male">Item 1</li>
+        <li class="female">Item 2</li>
+        <li class="male">Item 3</li>
+        <li class="male" >Item 4</li>
+        <ul>
+            <li class="male">V. Item 1</li>
+            <li class="female">V. Item 2</li>
+            <li class="male">V. Item 3</li>
+            <li class="male" >V. Item 4</li>
+        </ul>
+    </ul>
+    <h1>Delhi</h1>
+    <ul class="delhi">
+        <li class="male">Item 1</li>
+        <li class="male">Item 2</li>
+        <li class="male">Item 3</li>
+        <li class="female">Item 4</li>
+        <ul>
+            <li class="male">V. Item 1</li>
+            <li class="female">V. Item 2</li>
+            <li class="male">V. Item 3</li>
+            <li class="male" >V. Item 4</li>
+        </ul>
+    </ul>
+    <h1>Gujarat</h1>
+    <ul class="gujarat">
+        <li class="female">Item 1</li>
+        <li class="male">Item 2</li>
+        <li class="female">Item 3</li>
+        <li class="female">Item 4</li>
+        <ul>
+            <li class="male">V. Item 1</li>
+            <li class="female">V. Item 2</li>
+            <li class="male">V. Item 3</li>
+            <li class="male" >V. Item 4</li>
+        </ul>
+    </ul>
+</body>
+</html>

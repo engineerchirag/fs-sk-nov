@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Internal CSS -->
+    <style>
+        body {
+            background-color: #ccc;
+        }
+
+        .description {
+            color: green;
+        }
+
+        .post-heading {
+            color: brown;
+        }
+
+        .post {
+            color: blue;
+        }
+
+        #subtitle {
+            background-color: yellow;
+        }
+
+        li.post1 {
+            color: red;
+        }
+
+        li.post {
+            font-size: 12px;
+        }
+    </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <h1>Title</h1>
+    <h2 id="subtitle">Subtitle </h2>
+    <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam fugit sunt modi incidunt dolore, nesciunt officiis dolores atque illum ad eveniet minus deserunt! Amet vero dolore reiciendis tempore ab placeat.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio veniam sapiente eveniet fugit totam maxime animi accusamus. Vel, sunt quod!</p>
+
+    <h2 class="post-heading">Posts</h2>
+    <ul>
+        <!-- Inline CSS -->
+        <li class="post post1" style="background-color: pink; font-size: 20px;">Post 1</li>
+        <li class="post post2">Post 2</li>
+        <li class="post">Post 3</li>
+        <li class="post">Post 4</li>
+    </ul>
+</body>
+</html>

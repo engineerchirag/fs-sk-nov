@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!-- - Name
+- Email
+- Phone
+- DOB
+- Password
+- Gender
+- Profile: Frontend/Backend/Fullstack
+- Education
+- Resume
+ -->
+  <body>
+    <h1>Job Application</h1>
+    <div>
+      <label for="name">Name</label>
+      <input placeholder="Enter Name" id="name" type="text" value="Chirag Goel" />
+    </div>
+    <div>
+      <label for="phone">Phone</label>
+      <input type="number" placeholder="Enter Phone Number" id="phone"  value="9999999"/>
+    </div>
+    <div>
+      <label for="dob">Date of Birth</label>
+      <input type="date" placeholder="DOB" min="1992-01-01" max="2023-12-02" id="dob"/>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter password" id="password"/>
+    </div>
+    <div>
+        <label>Gender</label>
+        <input type="radio" name="gender" id="m" /><label for="m">Male</label>
+        <input type="radio" name="gender" id="f"/><label for="f">Female</label>
+        <input type="radio" name="gender" id="o"/><label for="o">Other</label>
+    </div>
+    <div>
+        <label>Job Profile</label>
+        <input type="Checkbox" id="frontend"/> <label for="frontend">Frontend</label>
+        <input type="Checkbox" id="backend"/> <label for="backend">Backend</label>
+        <input type="Checkbox" id="fullstack"/> <label for="fullstack">Fullstack</label>
+    </div>
+    <div>
+        <label>Education</label>
+        <select>
+            <option>BTech</option>
+            <option>BCA</option>
+            <option>BA</option>
+            <option>BBA</option>
+            <option>BCOM</option>
+            <option>MTech</option>
+        </select>
+    </div>
+    <div>
+        <label>Address</label>
+        <textarea></textarea>
+    </div>
+    <div>
+        <label>Experience</label>
+        <input type="number" placeholder="Enter experience" id="experience" min="5" max="10"/>
+    </div>
+    <div>
+        <label>Resume</label>
+        <input type="file" accept="image/png, image/jpeg" />
+    </div>
+    <div>
+        <button>Apply</button>
+    </div>
+  </body>
+</html>

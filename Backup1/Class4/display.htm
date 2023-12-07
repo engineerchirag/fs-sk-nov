@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            width: 100%;
+            background-color: #ccc;
+        }
+
+        .child {
+            width: 50px;
+            height: 50px;
+            border: 1px solid red;
+            display: inline-block;
+        }
+
+        .child:nth-child(3) {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+    </div>
+</body>
+</html>

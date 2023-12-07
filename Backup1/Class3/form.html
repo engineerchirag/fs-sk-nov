@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+        form {
+            color: blue;
+        }
+
+        label[for="password"] {
+            background-color: pink;
+        }
+
+        input[placeholder="Enter Password"] {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="/signin" method="POST">
+        <div>
+            <!-- Username -->
+            <label for="username">Username</label>
+            <input placeholder="Enter Username" id="username" name="user"/>
+        </div>
+
+        <div>
+            <!-- Password -->
+            <label for="password">Password</label>
+            <input type="password" placeholder="Enter Password" id="password" name="pass"/>
+        </div>
+
+        <div>
+            <!-- Remember me -->
+            <input type="checkbox" id="rememberme" name="remember"/>
+            <label for="rememberme" >Remember me</label>
+        </div>
+
+        <p>terms & condition</p>
+
+        <div>
+            <!-- Submit -->
+            <button>Login</button>
+        </div>
+    </form>
+</body>
+</html>
+
+<!-- http://127.0.0.1:5500/signin?user=Chirag&pass=123&remember=on -->
