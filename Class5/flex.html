@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0; 
+         }
+        .container {
+            display: flex;
+            height: 100vh;
+            background-color: hsl(0, 0%, 80%);
+        }
+        .box {
+            background-color: pink;
+            height: 100px;
+            width: 100px;
+            margin: 5px;
+            flex-grow: 1;
+        }
+
+        .box:nth-child(2) {
+            order: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box">
+            This is my content 1
+        </div>
+        <div class="box">
+            This is my content 2
+        </div>
+        <div class="box">
+            This is my content 3
+        </div>
+    </div>
+</body>
+</html>
