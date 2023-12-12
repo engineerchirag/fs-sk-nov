@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      
+    <style>  
+        #heading { /* 100 */
+            color: indigo;
+        }
+
+        h1#heading { /* 101 */
+            color: yellow;
+        }
+
+        #container h1#heading { /* 201 */
+            color: blue;
+        }
+
+        #container h1#heading:hover { /* 211 */
+            color: turquoise;
+        }
+
+        h1:hover { /* 11 */
+            color: cyan;
+        }
+
+        .title { /* 010 */
+            color: red;
+        }
+        h1 { /* 1001 */
+            color: pink !important;
+        }
+
+        h1:hover { /* 1011 */
+            color: teal !important;
+        }
+
+        body h1.title { /* 011 */
+            color: green;
+        }
+
+        h1.title { /* 012 */
+            color: green;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 class="title" id="heading">Vinetha</h1>
+        <ul>
+            <li>City: Bangalore</li>
+            <li>Qualification: BTech</li>
+            <li>Batch: 2023</li>
+        </ul>
+    </div>
+</body>
+</html>
