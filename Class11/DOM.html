@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 id="heading">Heading</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis magnam sit quo vero maiores, a asperiores, eveniet dolores labore alias consequatur expedita, corrupti error repellat placeat eaque necessitatibus aperiam ab.</p>
+        <ul>
+            <li class="item">First</li>
+            <li class="item">Second</li>
+            <li>Third</li>
+        </ul>
+    </div>
+    <script>
+        const headingRef = document.getElementById('heading');
+        console.log(headingRef);
+
+        const itemsRef = document.getElementsByClassName('item');
+        console.log(itemsRef);
+
+        const pRef = document.getElementsByTagName('p');
+        console.log(pRef);
+
+        const liRef = document.querySelectorAll('ul li.item');
+        console.log(liRef);
+    </script>
+</body>
+</html>

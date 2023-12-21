@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Multiplication Form</h1>
+        <input type="number" value="3" id="num1" />
+        X
+        <input type="number" value="2" id="num2"/>
+        =
+        <span id="result">6</span>
+    </div>
+    <script>
+        const num1Ref = document.getElementById('num1');
+        const num2Ref = document.getElementById('num2');
+        const resultRef = document.getElementById('result');
+
+        function updateProduct() {
+            const num1 =  num1Ref.value;
+            const num2 =  num2Ref.value;
+            resultRef.innerText = num1 * num2;
+        }
+
+        num1Ref.addEventListener('change', function() {
+            updateProduct();
+        });
+
+        num2Ref.addEventListener('change', function() {
+            updateProduct();
+        });
+
+    </script>
+</body>
+</html>
