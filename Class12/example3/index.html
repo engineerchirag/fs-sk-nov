@@ -1,0 +1,30 @@
+<html>
+  <head></head>
+  <body>
+    
+      <div>
+        <div>
+          <input
+            class="username"
+            type="text"
+            name="username"
+            placeholder="enter name"
+          />
+          <span class="preview"></span>
+        </div>
+      </div>
+      <script>
+        const usernameRef = document.getElementsByClassName('username')[0];
+        usernameRef.addEventListener('keyup', function(event) {
+            console.log(event.key);
+            if (event.key === "Enter") {
+                const previewRef = document.querySelector('.preview');
+                previewRef.innerText = event.target.value;
+            }
+        });
+        /* usernameRef.addEventListener('keydown', function(event) {
+            console.log('keydown > ', event.target.value);
+        }); */
+      </script>
+</body>
+</html>

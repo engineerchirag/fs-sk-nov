@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Enter task"/>
+    <ul>
+        <li>Item 1 <button>Delete1</button></li>
+        <li>Item 2 <button>Delete2</button></li>
+        <li>Item 3 <button>Delete3</button></li>
+        <li>Item 4 <button>Delete4</button></li>
+    </ul>
+
+    <script>
+        const buttonsRef = document.querySelectorAll('ul li button');
+
+        buttonsRef.forEach((btnRef) => {
+            btnRef.addEventListener('click', (event) => {
+                console.log(event.target);
+                event.target.parentElement.remove();
+            });
+        })
+    </script>
+</body>
+</html>
