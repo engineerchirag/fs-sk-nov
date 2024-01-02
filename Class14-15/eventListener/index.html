@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 30px;
+        }
+        .child {
+            border: 1px solid green;
+        }
+        .parent {
+            border: 1px solid blue;
+        }
+        .grand-parent {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="grand-parent">
+        Grand Parent
+        <div class="parent">
+            Parent
+            <div class="child">
+                Child
+            </div>
+        </div>
+    </div>
+    <script>
+        const grandParentRef = document.querySelector('.grand-parent');
+        const parentRef = document.querySelector('.parent');
+        const childRef = document.querySelector('.child');
+
+        grandParentRef.addEventListener('click', function(e) {
+            alert('Grand Parent');
+        })
+
+        parentRef.addEventListener('click', function(e) {
+            alert('Parent');
+        })
+
+        childRef.addEventListener('click', function(e) {
+            e.stopPropagation();
+            alert('Child');
+        });
+
+        document.addEventListener('click', function(e) {
+            alert('document');
+        })
+
+        
+        document.addEventListener('click', function(e) {
+            alert(`document-capture ${e.clientX} ${e.clientY}`);
+        }, {
+            capture: true
+        })
+        /*
+        parentRef.addEventListener('click', function(e) {
+            alert('Parent-capture');
+        }, {
+            capture: true
+        })
+        */
+    </script>
+</body>
+</html>
