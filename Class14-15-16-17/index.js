@@ -6,6 +6,9 @@ const taskWrapperRef = document.querySelector('.tasks-wrapper');
 const rightCategorySelection = document.querySelectorAll('.right-section .category');
 const taskListDeleteRef = document.querySelectorAll('.tasks-wrapper .task .task-delete-icon')
 const headerCategoryFilterWrapper =  document.querySelector('header .category-wrapper');
+const taskSearchRef = document.querySelector('.task-search input');
+
+const tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
 
 
 addRef.addEventListener('click', function(e) {
@@ -29,7 +32,7 @@ function toggleModal() {
     }
 }
 
-const tasks = JSON.parse(localStorage.getItem('tasks') || []);
+
 
 function renderTaskList() {
     tasks.forEach((task) => {
@@ -72,12 +75,12 @@ function createTask(task) {
         <div class="task-delete-icon"><i class="fa-solid fa-trash"></i></div>
     `;
     taskWrapperRef.appendChild(taskRef);
-    // const deleteIconRef = taskRef.querySelector('.task-delete-icon .fa-trash');
-    // deleteIconRef.addEventListener('click', function(e) {
-    //     const selectedTask = e.target.closest('.task');
-    //     selectedTask.remove();
-    //     deleteTaskFromData(task.id);
-    // });
+    const textareaRef = taskRef.querySelector('.task-title textarea');
+    textareaRef.addEventListener('change', function(e) {
+        const updatedTitle = e.target.value;
+        const currentTaskId = task.id;
+        updatedTitleInData(updatedTitle, currentTaskId);
+    });
 }
 
 rightCategorySelection.forEach(function(categoryRef) {
@@ -91,6 +94,13 @@ function removeAllCategorySelection() {
     rightCategorySelection.forEach(function(categoryRef) {
         categoryRef.classList.remove('selected');
     })
+}
+
+function updatedTitleInData(updatedTitle, taskId) {
+    const selectedTaskIdx = tasks.findIndex((task) => Number(task.id) === Number(taskId));
+    const selectedTask = tasks[selectedTaskIdx];
+    selectedTask.title = updatedTitle;
+    localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 function deleteTaskFromData(taskId) {
@@ -160,4 +170,24 @@ removeRef.addEventListener('click', function(e) {
         e.target.classList.add('enabled');
         taskWrapperRef.dataset.deleteDisabled = false;
     }
+})
+
+taskSearchRef.addEventListener("keyup", function(e) {
+    taskWrapperRef.innerHTML = "";
+
+    // In-memory Data
+    tasks.forEach((task) => {
+        const currentTitle = task.title.toLowerCase();
+        const searchText = e.target.value.toLowerCase();
+        const taskId = String(task.id);
+        if (searchText.trim() === "" 
+            || currentTitle.includes(searchText) 
+            || taskId.includes(searchText)
+        ) {
+            createTask(task);
+        }
+    })
+
+    // DOM Reference
+    // TODO: Assigment
 })
