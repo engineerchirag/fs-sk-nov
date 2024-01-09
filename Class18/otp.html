@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .otp-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .otp {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px 0;
+        }
+        .otp input {
+            width: 30px;
+            height: 40px;
+            border: 1px solid black;
+            border-radius: 3px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="otp-wrapper">
+        <h1>Enter OTP</h1>
+        <div class="otp">
+            <input maxlength="1" />
+            <input maxlength="1" />
+            <input maxlength="1" />
+            <input maxlength="1" />
+            <input maxlength="1" />
+            <input maxlength="1" />
+        </div>
+    </div>
+    <script>
+        document.querySelector('.otp input:nth-child(5)').focus();
+    </script>
+</body>
+</html>

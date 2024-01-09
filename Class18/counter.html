@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="counter-wrapper">
+        <h1>Counter</h1>
+        <div class="result">0</div>
+        <div class="delta">
+            <span>increment/decrement by</span>
+            <input type="number" placeholder="delta" value="1"/>
+        </div>
+        <div class="action">
+            <button>+</button>
+            <button>-</button>
+        </div>
+        <div class="reset">
+            <button>Reset</button>
+        </div>
+    </div>
+    <script>
+        
+        // Data
+        // - DOM
+        // Ref:
+        // > of result
+        const resultRef = document.querySelector('.result');
+        // > of delta
+        const inputRef = document.querySelector('.delta input');
+        // > of +,-, reset
+        const plusRef = document.querySelector('.action button:nth-child(1)');
+        const minusRef = document.querySelector('.action button:nth-child(2)');
+        const resetRef = document.querySelector('.reset button');
+        // - JS In-memory
+        // > count
+        let count = 0;
+        let delta = 1;
+
+
+        // Methods
+        // > addListener()
+        function addListener() {
+            inputRef.addEventListener('change', (e) => {
+                delta = Number(e.target.value);
+            });
+
+            plusRef.addEventListener('click', (e) => {
+                increment();
+            })
+
+            minusRef.addEventListener('click', (e) => {
+                decrement();
+            })
+
+            resetRef.addEventListener('click', (e) => {
+                reset();
+            })
+
+        }
+        // > increment()
+        function increment() {
+            count += delta;
+            updateResult();
+        }
+
+        // > decrement()
+        function decrement() {
+            count -= delta;
+            updateResult();
+        }
+
+        // > reset()
+        function reset() {
+            count = 0;
+            updateResult();
+        }
+
+        // > updateResult()
+        function updateResult()  {
+            resultRef.innerText = count;
+        }
+
+        addListener();
+    </script>
+</body>
+</html>

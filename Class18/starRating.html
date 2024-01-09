@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .star-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .stars {
+            display: flex;
+            padding: 15px 0;
+        }
+        .star {
+            width: 50px;
+            height: 50px;
+            font-size: 40px;
+            padding: 5px;
+        }
+        .star i.fa-solid {
+            color: gold;
+        }
+        .rating {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="star-wrapper">
+        <h1>Star Component</h1>
+        <div class="stars">
+            <div class="star"><i class="fa-regular fa-star" data-id="1"></i></div>
+            <div class="star"><i class="fa-regular fa-star" data-id="2"></i></div>
+            <div class="star"><i class="fa-regular fa-star" data-id="3"></i></div>
+            <div class="star"><i class="fa-regular fa-star" data-id="4"></i></div>
+            <div class="star"><i class="fa-regular fa-star" data-id="5"></i></div>
+        </div>
+        <div class="rating">Ratings count > <span>0</span></div>
+    </div>
+
+    <script>
+        let starRating = 0;
+        const ratingResultRef = document.querySelector('.rating span');
+
+        const starsWrapper = document.querySelector('.stars');
+        starsWrapper.addEventListener('click', function(e) {
+            const targetElement = e.target;
+            if (targetElement.classList.contains('fa-star')) {
+                const targetValue = targetElement.dataset.id;
+                ratingResultRef.innerText = targetValue;
+                starRating = Number(targetValue);
+                changeColor(targetValue);
+            }
+        })
+
+        starsWrapper.addEventListener('mouseover', function(e) {
+            const targetElement = e.target;
+            if (targetElement.classList.contains('fa-star')) {
+                const targetValue = targetElement.dataset.id;
+                changeColor(targetValue);
+            }
+        })
+
+        starsWrapper.addEventListener('mouseleave', function(e) {
+            changeColor(starRating);
+        })
+
+        function changeColor(targetIndex) {
+            const starIcons = document.querySelectorAll('.stars .star i');
+
+            starIcons.forEach((icon, idx) => {
+                const currentIdx = idx + 1;
+                if (currentIdx <= targetIndex) {
+                    // Add Star
+                    icon.classList.remove('fa-regular');
+                    icon.classList.add('fa-solid');
+                } else {
+                    // Remove Star
+                    icon.classList.remove('fa-solid');
+                    icon.classList.add('fa-regular');
+                }
+            })
+        }
+    </script>
+</body>
+</html>
