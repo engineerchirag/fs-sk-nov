@@ -30,16 +30,44 @@
     <div class="otp-wrapper">
         <h1>Enter OTP</h1>
         <div class="otp">
-            <input maxlength="1" />
-            <input maxlength="1" />
-            <input maxlength="1" />
-            <input maxlength="1" />
-            <input maxlength="1" />
+            <!-- Input 1 -->
+            <input maxlength="1" type="number"/>
+            <!-- Input 2 -->
+            <input maxlength="1" type="number"/>
+            <!-- Input 3 -->
+            <input maxlength="1" type="number"/>
+            <!-- Input 4 -->
+            <input maxlength="1" type="number"/>
+            <!-- Input 5 -->
+            <input maxlength="1" type="number"/>
+            <!-- Input 6 -->
             <input maxlength="1" />
         </div>
     </div>
     <script>
-        document.querySelector('.otp input:nth-child(5)').focus();
+        //document.querySelector('.otp input:nth-child(5)').focus();
+        const inputsRef = document.querySelectorAll('.otp input');
+        inputsRef.forEach((inputRef) => {
+            inputRef.addEventListener('keyup', function(e) {
+                console.log(e.target.value, Number(e.target.value));
+                if (e.target.value && !isNaN(Number(e.target.value))) {
+                    e.target.nextElementSibling?.focus(); 
+                } 
+            })
+        })
+
+        inputsRef.forEach((inputRef) => {
+            inputRef.addEventListener('keydown', function(e) {
+                if (e.key == "Delete" || e.key == "Backspace") {
+                    console.log(e.target.value);
+                    if (!e.target.value) {
+                        e.target.previousElementSibling?.focus();
+                    }
+    
+                }
+            })
+        })
+        
     </script>
 </body>
 </html>

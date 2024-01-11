@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .comment-wrapper {
+            padding: 10px;
+        }
+        .comment-detail {
+            background-color: rgb(222, 222, 222);
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+
+
+        .comment-box a {
+            color: blue;
+            margin: 5px 0;
+        }
+
+        .comment-reply {
+            padding-left: 50px;
+        }
+
+        .comment-form {
+            margin: 10px 0;
+        }
+
+        .comment-form input {
+            border-radius: 5px;
+            height: 30px;
+            padding: 0 10px;
+        }
+
+        .comment-form button {
+            border-radius: 5px;
+            background-color: rgb(135, 135, 235);
+            color: white;
+            height: 35px;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="comment-wrapper">
+        <div class="comment-box">
+            <div class="comment-detail">
+                <h2>First Commentor</h2>
+                <a href="#">Add Reply</a>
+            </div>
+            <div class="comment-reply">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function createCommentBox(ref, comment) {
+            const commentBoxRef  = document.createElement('div');
+            commentBoxRef.className = 'comment-box';
+            commentBoxRef.innerHTML = `
+                <div class="comment-form">
+                    <input placeholder="Write Your Reply" />
+                    <button>Submit</button>
+                </div>
+                <div class="comment-reply">
+                </div>
+            `;
+
+            ref.appendChild(commentBoxRef);
+
+            commentBoxRef.querySelector('button').addEventListener('click', function(e) {
+                console.log(e.target.previousElementSibling.value);
+                const currentRef = e.target.closest('.comment-form');
+                const parentRef = e.target.closest('.comment-box');
+                currentRef.style.display = 'none';
+                createCommentDetail(parentRef, currentRef, e.target.previousElementSibling.value)
+            })
+        }
+
+        function createCommentDetail(parentRef, currentRef, comment) {
+            const commentDetailRef  = document.createElement('div');
+            commentDetailRef.className = 'comment-detail';
+            commentDetailRef.innerHTML = `
+                <h2>${comment}</h2>
+                <a href="#">Add Reply</a>
+            `;
+
+            parentRef.insertBefore(commentDetailRef, currentRef);
+        }
+
+        const commentWrapperRef = document.querySelector('.comment-wrapper');
+        commentWrapperRef.addEventListener('click', function(e) {
+            if (e.target.nodeName === 'A') {
+                console.log(e.target, e.target.nodeName);
+                const commentBoxRef = e.target.closest('.comment-box');
+                const commentReplyRef = commentBoxRef.querySelector('.comment-reply');
+                createCommentBox(commentReplyRef, 'Hi2');
+            }
+        })
+    </script>
+</body>
+</html>
