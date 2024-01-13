@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Throttle</h1>
+    <input type="text" placeholder="Enter name..."/>
+
+
+    <script>
+
+        function throttle(fn, delay){
+            let flag = true;
+            return function(e) {
+                if (flag) {
+                    flag = false;
+                    setTimeout(() => {
+                        fn(e);
+                        flag = true;
+                    }, delay);
+                }
+            }
+        }
+
+        const inputRef = document.querySelector('input');
+
+        const fn = function(e) {
+            console.log(e.target.value);
+        }
+
+        const debouncedFn = throttle(fn, 2000);
+        
+        inputRef.addEventListener('keyup', debouncedFn);
+
+    </script>
+</body>
+</html>
