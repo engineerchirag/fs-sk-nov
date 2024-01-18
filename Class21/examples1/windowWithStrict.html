@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict";
+
+        console.log('1.', this); // window
+
+        ////////////////////////////////
+        function test() {
+            console.log('2.', this); // window
+        }
+
+        test();
+
+        ////////////////////////////////
+        let obj = {
+            name: "Atul Jha",
+            age: 60,
+            getThis: function () {
+                console.log('3.', this); // 
+            }
+        }
+        obj.getThis();
+        
+        ////////////////////////////////
+        const getThisFn = obj.getThis;
+        getThisFn();
+    </script>
+</head>
+<body>
+    Window with Strict mode!
+</body>
+</html>
