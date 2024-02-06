@@ -18,3 +18,9 @@ let c = '1';
 
 console.log(1 == '1');
 console.log(1 === '1');
+
+
+typeof X //
+
+Array.isArray() //
+isNaN() // 
