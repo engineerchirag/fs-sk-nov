@@ -2,11 +2,11 @@ import { useState } from "react";
 
 const TodoApp = () => {
   const [todos, setTodos] = useState([
-    { title: "Item 1", isCompleted: true },
-    { title: "Item 2", isCompleted: false },
-    { title: "Item 3", isCompleted: true },
-    { title: "Item 4", isCompleted: true },
-    { title: "Item 5", isCompleted: false },
+    // { title: "Item 1", isCompleted: true },
+    // { title: "Item 2", isCompleted: false },
+    // { title: "Item 3", isCompleted: true },
+    // { title: "Item 4", isCompleted: true },
+    // { title: "Item 5", isCompleted: false },
   ]);
   const [newTodo, setNewTodo] = useState("");
   const [newTodoStatus, setNewTodoStatus] = useState(false);
@@ -20,7 +20,7 @@ const TodoApp = () => {
     const newTodosList = [...todos, { title: newTodo, isCompleted: newTodoStatus }];
     setTodos(newTodosList);
     setNewTodo("");
-    setNewTodoStatus("");
+    setNewTodoStatus(false);
   };
 
   const handleCompletion = (e) => {
@@ -60,6 +60,9 @@ const TodoApp = () => {
         </form>
       </div>
       <div className="todo-list">
+
+        {!todos.length ? "Please create your first todo" : null}
+
         {todos.map((todo, idx) => (
           <div className="todo-item">
             <input
