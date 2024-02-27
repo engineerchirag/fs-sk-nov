@@ -1,3 +1,4 @@
+import Heading from "./Heading";
 import MovieCard from "./MovieCard";
 import { useState, useEffect } from "react";
 
@@ -11,14 +12,17 @@ const MovieList = () => {
   }, []);
 
   return (
-    <div className="movie-list">
-        {!movies.length && <h1>Loading...</h1> }
-        {
-            movies?.map(movie => (
-                <MovieCard movie={movie}/>
-            ))
-        }
-    </div>
+    <>
+      <Heading />
+      <div className="movie-list">
+          {!movies.length && <h1>Loading...</h1> }
+          {
+              movies?.map(movie => (
+                  <MovieCard movie={movie}/>
+              ))
+          }
+      </div>
+    </>
   );
 };
 
